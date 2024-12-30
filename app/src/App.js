@@ -2,29 +2,42 @@ import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HW5 from './pages/hw5';
+import Users from './components/Users';
+import DetailedUserPage from './components/DetailedUserPage'
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="body">
       <Routes>
-        <Route path="/" element={
-          <div className="page-content">
-            <div className="page-title">Projects</div>
-            <div className="projects">
-              {projects.map(((project) => (
-                <Project key={project.title} title={project.title} desc={project.desc} tags={project.tags} />
-              )
-              ))}
-            </div>
-          </div>
-        } />
-        <Route path="/hw5" element={<HW5 />} />
+        <Route path="/" element={<About />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/users/:id" element={<DetailedUserPage />} />
       </Routes>
       <NavBar />
       </div>
     </BrowserRouter>
+  );
+}
+
+function About () {
+  const navigate = useNavigate();
+
+  return (
+    <div className="page-content">
+      <div className="page-title">Projects</div>
+      <div className="projects">
+          {projects.map(((project) => (
+            <Project key={project.title} title={project.title} desc={project.desc} tags={project.tags} />
+          )
+          ))}
+        </div>
+        <div 
+          className="projects"
+          onClick={() => navigate("/users")}
+          style={{backgroundColor: "#1117B1", color: "white", padding: "5px", width: "200px"}}>click me to go to hw5</div>
+      </div>
   );
 }
 
