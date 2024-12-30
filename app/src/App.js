@@ -3,15 +3,15 @@ import './App.css';
 import { useState, useEffect } from 'react';
 
 function App() {
-  return ( // need to fix the styling organization
+  return (
     <div className="body">
       <div className="page-content">
         <div className="page-title">Projects</div>
         <div className="projects">
-          {projects.map(((project) => (
+          {projects.map((project) => (
             <Project key={project.title} title={project.title} desc={project.desc} tags={project.tags} />
           )
-          ))}
+          )}
         </div>
       </div>
       <NavBar />
@@ -93,83 +93,3 @@ function Project(props) {
 }
 
 export default App;
-
-
-// <!DOCTYPE html>
-// <html lang="en">
-// <head>
-//     <meta charset="UTF-8">
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//     <title>Document</title>
-//     <link rel="stylesheet" href="style.css">
-// </head>
-// <body>
-//     <div class="page-content">
-//       <div class="page-title">Projects</div>
-//       <div class="projects">
-//         <div class="project-box">
-//           <img
-//             class="project-image"
-//             src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
-//           />
-//           <div class="right-col">
-//             <div class="project-title">Project 1</div>
-//             <div class="project-desc">A description of project 1.</div>
-//             <div class="project-tags">
-//               <div class="tag">Swift</div>
-//               <div class="tag">SwiftUI</div>
-//               <div class="tag">Git</div>
-//             </div>
-//           </div>
-//         </div>
-//         <div class="project-box">
-//           <img
-//             class="project-image"
-//             src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
-//           />
-//           <div class="right-col">
-//             <div class="project-title">Project 2</div>
-//             <div class="project-desc">A description of Project 2.</div>
-//             <div class="project-tags">
-//               <div class="tag">C</div>
-//               <div class="tag">C++</div>
-//               <div class="tag">Google Test</div>
-//             </div>
-//           </div>
-//         </div>
-//         <div class="project-box">
-//           <img
-//             class="project-image"
-//             src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
-//           />
-//           <div class="right-col">
-//             <div class="project-title">Project 3</div>
-//             <div class="project-desc">A description of Project 3.</div>
-//             <div class="project-tags">
-//               <div class="tag">JavaScript</div>
-//               <div class="tag">HTML</div>
-//               <div class="tag">CSS</div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//     <div id="nav-bar">
-//         <div id="nav-items">
-//           <div class="item">
-//           About Me
-//           </div>
-//           <div class="item" id="selected">
-//           Projects
-//           </div>
-//           <div class="item">
-//           Experience
-//           </div>
-//           <div class="item">
-//           Contact
-//           </div>
-//         </div>
-//         <div id="vertical-line"></div>
-//     </div>
-//   </body>  
-// </html>
