@@ -1,26 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HW5 from './pages/hw5';
 
 function App() {
-  return ( // need to fix the styling organization
-    <div className="body">
-      <div className="page-content">
-        <div className="page-title">Projects</div>
-        <div className="projects">
-          {projects.map(((project) => (
-            <Project key={project.title} title={project.title} desc={project.desc} tags={project.tags} />
-          )
-          ))}
-        </div>
-      </div>
+  return (
+    <BrowserRouter>
+      <div className="body">
+      <Routes>
+        <Route path="/" element={
+          <div className="page-content">
+            <div className="page-title">Projects</div>
+            <div className="projects">
+              {projects.map(((project) => (
+                <Project key={project.title} title={project.title} desc={project.desc} tags={project.tags} />
+              )
+              ))}
+            </div>
+          </div>
+        } />
+        <Route path="/hw5" element={<HW5 />} />
+      </Routes>
       <NavBar />
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
 function NavBar() {
-  
+
   const navItems = ["About Me", "Projects", "Experience", "Contact"]
   const [selectedNavItem, setSelectedNavItem] = useState("About Me");
 
@@ -32,17 +41,17 @@ function NavBar() {
     <div id="nav-bar">
       <div id="nav-items">
         {navItems.map((item) => (
-          <div 
-              key={item}
-              className="navItem"
-              onClick={() => setSelectedNavItem(item)}
-              style={{ 
-                color: selectedNavItem === item ? "#8C8FD6" : "#1117B1",
-                fontSize: selectedNavItem === item ? "30px" : "24px"
-              }}
-            >
-              {item}
-            </div>
+          <div
+            key={item}
+            className="navItem"
+            onClick={() => setSelectedNavItem(item)}
+            style={{
+              color: selectedNavItem === item ? "#8C8FD6" : "#1117B1",
+              fontSize: selectedNavItem === item ? "30px" : "24px"
+            }}
+          >
+            {item}
+          </div>
         ))}
       </div>
       <div id="vertical-line"></div>
