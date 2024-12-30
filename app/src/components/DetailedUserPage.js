@@ -15,7 +15,20 @@ export default function DetailedUserPage() {
         getUserByID();
     }, [id]);
 
+    if (!user) {
+        return <div>Loading...</div>
+    }
+
     return (
-        <div>selected</div>
+        <div>
+            <div className="page-title">getUserByID detailed user page</div>
+            <div
+                style={{ backgroundColor: "#F1F1FF", padding: "20px", margin: "30px" }}
+            >
+                <div style={{ fontWeight: "bold" }}>{user.firstname} {user.lastname}</div>
+                <div>{user.email}</div>
+                <div>Major: {user.major}, Class of {user.graduationyear}</div>
+            </div>
+        </div>
     );
 };

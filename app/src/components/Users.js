@@ -5,7 +5,6 @@ import DetailedUserPage from "./DetailedUserPage";
 export default function HW5() {
     const navigate = useNavigate();
     const [users, setUsers] = useState([]);
-    //const[selectedUserID, setSelectedUserID] = useState(null);
 
     const getAllUsers = async () => {
         const response = await fetch("https://disc-assignment-5-users-api.onrender.com/api/users")
@@ -24,7 +23,8 @@ export default function HW5() {
                 {users.map((user) => (
                     <div
                         key={user.id}
-                        className="user-card" style={{ backgroundColor: "#F1F1FF", padding: "20px" }}
+                        className="user-card"
+                        style={{ backgroundColor: "#F1F1FF", padding: "20px" }}
                         onClick={() => navigate(`/users/${user.id}`)}
                         >
                         <div style={{ fontWeight: "bold" }}>{user.firstname} {user.lastname}</div>
