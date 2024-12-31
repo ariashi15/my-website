@@ -16,23 +16,18 @@ export default function Users() {
     }, []);
 
     const createUser = async () => {
-        const formData = new FormData();
-        formData.append("firstName", "New");
-        formData.append("lastName", "User");
-        formData.append("email", "something@gmail.com");
-        formData.append("bio", "hi");
-        formData.append("major", "Computer Science");
-        formData.append("graduationYear", 2027);
-
-        const selection = await window.showOpenFilePicker();
-        if (selection.length > 0) {
-            const file = await selection[0].getFile();
-            formData.append("image", file);
+        const userData = {
+            first_name: "First",
+            last_name: "Last",
+            email: "something@example.com"
         }
     
-        const response = await fetch("https://disc-assignment-5-users-api.onrender.com/api/users", { 
+        const response = await fetch("http://localhost:3005/api/users", { 
             method: 'POST',
-            body: formData
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData),
         });
 
         if (response.ok) {
