@@ -6,7 +6,7 @@ export default function Users() {
     const [users, setUsers] = useState([]);
 
     const getAllUsers = async () => {
-        const response = await fetch("https://disc-assignment-5-users-api.onrender.com/api/users")
+        const response = await fetch("http://localhost:3005/api/users")
         const data = await response.json();
         setUsers(data);
     };
@@ -55,9 +55,9 @@ export default function Users() {
                         style={{ backgroundColor: "#F1F1FF", padding: "20px" }}
                         onClick={() => navigate(`/users/${user.id}`)}
                         >
-                        <div style={{ fontWeight: "bold" }}>{user.firstname} {user.lastname}</div>
+                        <div style={{ fontWeight: "bold" }}>{user.first_name} {user.last_name}</div>
                         <div>{user.email}</div>
-                        <div>Major: {user.major}, Class of {user.graduationyear}</div>
+                        {/* <div>Major: {user.major}, Class of {user.graduationyear}</div> */}
                         <div>(click me to go to detailed user page)</div>
                     </div>
                 ))}
