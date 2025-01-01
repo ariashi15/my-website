@@ -28,7 +28,8 @@ export default function DetailedUserPage() {
             >
                 <div style={{ fontWeight: "bold" }}>{user.first_name} {user.last_name}</div>
                 <div>{user.email}</div>
-                {/* <div>Major: {user.major}, Class of {user.graduationyear}</div> */}
+                <div>Birthday: {user.user_profiles.date_of_birth}</div>
+                <div>Bio: {user.user_profiles.bio}</div>
             </div>
         </div>
     );
