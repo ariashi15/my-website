@@ -8,7 +8,8 @@ export default function DetailedUserPage() {
     const getUserByID = async () => {
         const response = await fetch(`http://localhost:3005/api/users/${id}`);
         const data = await response.json();
-        setUser(data);
+        console.log(data);
+        setUser(data[0]);
     }
 
     useEffect(() => {
