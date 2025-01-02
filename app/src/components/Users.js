@@ -6,7 +6,7 @@ export default function Users() {
     const [users, setUsers] = useState([]);
 
     const getAllUsers = async () => {
-        const response = await fetch("http://localhost:3005/api/users")
+        const response = await fetch("https://users-api-roan.vercel.app/api/users")
         const data = await response.json();
         setUsers(data);
     };
@@ -22,7 +22,7 @@ export default function Users() {
             email: "something@example.com"
         }
     
-        const response = await fetch("http://localhost:3005/api/users", { 
+        const response = await fetch("https://users-api-roan.vercel.app/api/users", { 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ export default function Users() {
                 <div 
                     style={{backgroundColor: "#1117B1", color: "white", padding: "5px", width: "200px"}}
                     onClick={() => createUser()}
-                >click me to create new user</div>
+                >this button doesn't work here sorry see hw-7 branch</div>
             </div>
         </div>
     );

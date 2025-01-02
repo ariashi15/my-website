@@ -6,7 +6,7 @@ export default function DetailedUserPage() {
     const [user, setUser] = useState(null);
 
     const getUserByID = async () => {
-        const response = await fetch(`http://localhost:3005/api/users/${id}`);
+        const response = await fetch(`https://users-api-roan.vercel.app/api/users/${id}`);
         const data = await response.json();
         console.log(data);
         setUser(data[0]);
