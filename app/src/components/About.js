@@ -5,7 +5,7 @@ export default function About () {
   
     return (
       <div className="page-content">
-        <div className="page-title">Projects</div>
+        <div className="page-title">Projects (hw 4)</div>
         <div className="projects">
             {projects.map(((project) => (
               <Project key={project.title} title={project.title} desc={project.desc} tags={project.tags} />
@@ -15,7 +15,7 @@ export default function About () {
           <div 
             className="projects"
             onClick={() => navigate("/users")}
-            style={{backgroundColor: "#1117B1", color: "white", padding: "5px", width: "200px"}}>click me to go to hw5</div>
+            style={{backgroundColor: "#1117B1", color: "white", padding: "5px", width: "200px"}}>click me to go to hw 5 through 9</div>
         </div>
     );
   }

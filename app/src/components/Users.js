@@ -17,12 +17,15 @@ export default function Users() {
 
     const createUser = async () => {
         const userData = {
-            first_name: "First",
-            last_name: "Last",
-            email: "something@example.com"
+            first_name: "Dummy",
+            last_name: "User",
+            email: "something@example.com",
+            bio: "hi",
+            date_of_birth: "10-11-2025"
         }
     
-        const response = await fetch("https://users-api-roan.vercel.app/api/users", { 
+        // https://users-api-roan.vercel.app/api/users
+        const response = await fetch("http://localhost:3005/api/users", { 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -41,8 +44,12 @@ export default function Users() {
 
     return (
         <div>
-            <div className="page-title">dummy page for hw5</div>
+            <div className="page-title">dummy page for hw 5 through 9</div>
             <div className="projects">
+                <div 
+                    style={{backgroundColor: "#1117B1", color: "white", padding: "5px", width: "200px"}}
+                    onClick={() => createUser()}
+                >click to create new user (data is hardcoded)</div>
                 {users.map((user) => (
                     <div
                         key={user.id}
@@ -57,10 +64,6 @@ export default function Users() {
                         <div>(click me to go to detailed user page)</div>
                     </div>
                 ))}
-                <div 
-                    style={{backgroundColor: "#1117B1", color: "white", padding: "5px", width: "200px"}}
-                    onClick={() => createUser()}
-                >this button doesn't work here sorry see hw-7 branch</div>
             </div>
         </div>
     );
