@@ -24,8 +24,7 @@ export default function Users() {
             date_of_birth: "10-11-2025"
         }
     
-        // https://users-api-roan.vercel.app/api/users
-        const response = await fetch("http://localhost:3005/api/users", { 
+        const response = await fetch("https://users-api-roan.vercel.app/api/users", { 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
